@@ -6,17 +6,19 @@
     padding: 1em 0;
     width: 100%;
     margin-bottom: 50px;
+    box-sizing: border-box;
 }
 
 /* Configuración del contenedor */
 .container {
     display: flex;
-    justify-content: space-around; /* Distribuye los elementos con espacio alrededor */
+    justify-content: space-around;
     align-items: center;
     width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
     padding: 0 2em;
 }
-
 
 /* Sección del perfil */
 .profile {
@@ -28,7 +30,7 @@
 .profile-pic {
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Hace la imagen circular */
+    border-radius: 50%;
 }
 
 .profile-name {
@@ -41,7 +43,7 @@
 .navbar-nav {
     list-style: none;
     display: flex;
-    gap: 3em; /* Espacio uniforme entre los enlaces */
+    gap: 3em;
     padding: 0;
     margin: 0;
 }
@@ -61,7 +63,7 @@
 .social-icons {
     display: flex;
     gap: 1em;
-    margin-right: 1.5em; /* Ajusta el margen derecho para traer las imágenes más al centro */
+    margin-right: 1.5em;
 }
 
 .social-icons a img {
@@ -88,18 +90,19 @@
     }
 
     .profile, .social-icons {
-        display: none; /* Oculta el perfil y redes sociales en pantallas pequeñas */
+        display: none;
     }
 }
+
 /*---------ABOUT---------------------*/
 /* Estructura general de la sección */
 .about-section {
-    background: linear-gradient(180deg, #1E3A8A, #E0E7FF); /* Degradado azul a gris claro */
+    background: linear-gradient(180deg, #1E3A8A, #E0E7FF);
     padding: 2em;
     border-radius: 12px;
     color: #ffffff;
-    max-width: 80%;
-    margin: auto;
+    max-width: 1200px; /* Ajuste de ancho máximo */
+    margin: 0 auto; /* Centra la sección en la pantalla */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -119,9 +122,11 @@
 /* Contenedor horizontal */
 .about-content {
     display: flex;
-    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
+    align-items: flex-start;
     gap: 2em;
     padding: 1em;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Contenedor de la imagen con efecto de giro */
@@ -158,21 +163,21 @@
     font-size: 1em;
     text-align: center;
     padding: 1em;
-    color: #ffffff;
+    color: #000000;
 }
 
 .image-front {
-    background: #3B82F6;
+    background: #1f3bd4;
 }
 
 .image-front img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
 }
 
 .image-back {
-    background: #4A5568; /* Gris oscuro para el reverso */
+    background: #4A5568;
     transform: rotateY(180deg);
     color: #ffffff;
     font-size: 1.2em;
@@ -185,41 +190,41 @@
     padding: 1.5em;
     border-radius: 10px;
     font-size: 1.1em;
-    color: #1E3A8A;
+    color: #000000;
     line-height: 1.6;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 70%;
-    margin-left: 3em;
+    margin: 0 auto; /* Centra el texto */
 }
 
 /* Adaptabilidad para dispositivos pequeños */
 @media (max-width: 768px) {
     .about-content {
-        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        flex-direction: column;
         align-items: center;
         gap: 1em;
     }
 
     .image-flip {
-        width: 100%; /* La imagen ocupará todo el ancho disponible */
-        max-width: 300px; /* Limita el ancho máximo en pantallas pequeñas */
+        width: 100%;
+        max-width: 300px;
         height: auto;
     }
 
     .intro-text {
-        max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        max-width: 100%;
         margin: 0;
     }
 }
 
 @media (max-width: 480px) {
     .section-title {
-        font-size: 1.5em; /* Ajusta el tamaño del título en pantallas muy pequeñas */
+        font-size: 1.5em;
         padding: 0.4em 0.8em;
     }
 
     .intro-text {
-        font-size: 1em; /* Ajusta el tamaño del texto para facilitar la lectura */
+        font-size: 1em;
         padding: 1em;
     }
 
@@ -228,12 +233,15 @@
         height: auto;
     }
 }
+
 /* Sección general de habilidades */
 .skills-section {
     text-align: center;
     padding: 2em;
     background: linear-gradient(180deg, #1E3A8A, #E0E7FF);
     color: #ffffff;
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra la sección */
 }
 
 /* Título */
@@ -257,7 +265,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #112B3C; /* Fondo suave para cada contenedor */
+    background: #112B3C;
     padding: 1.5em;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -265,11 +273,10 @@
 }
 
 .skill-item:hover {
-    transform: translateY(-10px); /* Efecto de levantamiento al pasar el cursor */
+    transform: translateY(-10px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Estilo de la imagen de la habilidad */
 .skill-item img {
     width: 60px;
     height: auto;
@@ -278,10 +285,9 @@
 }
 
 .skill-item:hover img {
-    transform: scale(1.1); /* Aumenta levemente el tamaño de la imagen */
+    transform: scale(1.1);
 }
 
-/* Texto de la habilidad */
 .skill-item p {
     font-size: 1em;
     color: #A7C7E7;
@@ -291,79 +297,100 @@
     letter-spacing: 0.05em;
 }
 
+/*-------- PROJECTS SECTION --------*/
 
-/* Projects Section */
-.projects {
-    padding: 40px 20px;
-    background: #f9f9f9;
+.projects-section {
+    background: linear-gradient(180deg, #1E3A8A, #E0E7FF);
+    padding: 2em;
+    color: #ffffff;
     text-align: center;
-}
-
-.projects h2 {
-    font-size: 2.8em;
-    font: weight 500px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.projects p {
-    font-size: 1.2em;
-    color: #777;
-    margin-bottom: 50px;
-}
-
-.container {
     max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    max-height: 2000px;
+}
+
+.projects-title {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 1em;
+    background: #ffffff;
+    color: #1E3A8A;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2em;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Project Item */
-.project-item {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    overflow: hidden;
-}
-
-.project-item img {
-    width: 100%;
-    max-width: 200px;
-    object-fit: cover;
-}
-
-.project-details {
-    padding: 30px;
-    text-align: left;
-    flex: 1;
-}
-
-.project-details h3 {
-    font-size: 2em;
-    color: #6a0dad;
-    margin-bottom: 15px;
-}
-
-.project-details p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.case-study-button {
-    text-decoration: none;
-    background-color: #6a0dad;
-    color: white;
-    padding: 15px 25px;
+/* Estilo ajustado para las tarjetas de proyecto */
+.project-card {
+    background: #112B3C;
     border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.3s ease;
+    padding: 1.5em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
 }
 
-.case-study-button:hover {
-    background-color: #5c0fa6;
-    transform: translateY(-3px);
+/* Tamaño uniforme para las imágenes */
+.project-card img {
+    width: 100%;
+    height: 180px; /* Fija la altura para que todas las imágenes tengan el mismo tamaño */
+    object-fit: cover; /* Ajusta la imagen para que no se distorsione */
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* Tamaño y alineación consistente para los logos */
+.project-logos, .project-logos2 {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.project-logos img, .project-logos2 img {
+    width: 70px; /* Tamaño uniforme para todos los logos */
+    height: 70px;
+    transition: transform 0.3s;
+}
+
+/* Efecto hover para los logos */
+.project-logos img:hover, .project-logos2 img:hover {
+    transform: scale(1.1);
+}
+
+/* Ajustes para el texto */
+.project-card h3 {
+    color: #A7C7E7;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.project-card p {
+    color: #E0E7FF;
+    font-size: 0.9em;
+    margin: 1em 0;
+    flex-grow: 1;
+}
+
+/* Adaptabilidad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
