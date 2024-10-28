@@ -1,0 +1,369 @@
+/*---------NAVIGATION----------------------*/
+
+/* Estilos generales de la barra */
+.navbar {
+    background: linear-gradient(90deg, #1E3A8A, #3B82F6, #60A5FA);
+    padding: 1em 0;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* Configuración del contenedor */
+.container {
+    display: flex;
+    justify-content: space-around; /* Distribuye los elementos con espacio alrededor */
+    align-items: center;
+    width: 100%;
+    padding: 0 2em;
+}
+
+
+/* Sección del perfil */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Hace la imagen circular */
+}
+
+.profile-name {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Estilos de la lista de navegación */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 3em; /* Espacio uniforme entre los enlaces */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.navbar-nav li a:hover {
+    color: #0056b3;
+}
+
+/* Sección de íconos de redes sociales */
+.social-icons {
+    display: flex;
+    gap: 1em;
+    margin-right: 1.5em; /* Ajusta el margen derecho para traer las imágenes más al centro */
+}
+
+.social-icons a img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Adaptabilidad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 1em;
+    }
+    
+    .menu-toggle:checked + .navbar-toggler + .navbar-nav {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .profile, .social-icons {
+        display: none; /* Oculta el perfil y redes sociales en pantallas pequeñas */
+    }
+}
+/*---------ABOUT---------------------*/
+/* Estructura general de la sección */
+.about-section {
+    background: linear-gradient(180deg, #1E3A8A, #E0E7FF); /* Degradado azul a gris claro */
+    padding: 2em;
+    border-radius: 12px;
+    color: #ffffff;
+    max-width: 80%;
+    margin: auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.section-title {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    background: #ffffff;
+    color: #1E3A8A;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+}
+
+/* Contenedor horizontal */
+.about-content {
+    display: flex;
+    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
+    gap: 2em;
+    padding: 1em;
+}
+
+/* Contenedor de la imagen con efecto de giro */
+.image-flip {
+    perspective: 1000px;
+    width: 220px;
+    height: 220px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.image-flip:hover .image-inner {
+    transform: rotateY(180deg);
+}
+
+.image-front, .image-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    text-align: center;
+    padding: 1em;
+    color: #ffffff;
+}
+
+.image-front {
+    background: #3B82F6;
+}
+
+.image-front img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-back {
+    background: #4A5568; /* Gris oscuro para el reverso */
+    transform: rotateY(180deg);
+    color: #ffffff;
+    font-size: 1.2em;
+    padding: 1em;
+}
+
+/* Texto de introducción */
+.intro-text {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5em;
+    border-radius: 10px;
+    font-size: 1.1em;
+    color: #1E3A8A;
+    line-height: 1.6;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 70%;
+    margin-left: 3em;
+}
+
+/* Adaptabilidad para dispositivos pequeños */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        align-items: center;
+        gap: 1em;
+    }
+
+    .image-flip {
+        width: 100%; /* La imagen ocupará todo el ancho disponible */
+        max-width: 300px; /* Limita el ancho máximo en pantallas pequeñas */
+        height: auto;
+    }
+
+    .intro-text {
+        max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5em; /* Ajusta el tamaño del título en pantallas muy pequeñas */
+        padding: 0.4em 0.8em;
+    }
+
+    .intro-text {
+        font-size: 1em; /* Ajusta el tamaño del texto para facilitar la lectura */
+        padding: 1em;
+    }
+
+    .image-flip {
+        max-width: 100%;
+        height: auto;
+    }
+}
+/* Sección general de habilidades */
+.skills-section {
+    text-align: center;
+    padding: 2em;
+    background: linear-gradient(180deg, #1E3A8A, #E0E7FF);
+    color: #ffffff;
+}
+
+/* Título */
+.skills-title {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 1em;
+}
+
+/* Cuadrícula de habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Estilo para cada habilidad */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #112B3C; /* Fondo suave para cada contenedor */
+    padding: 1.5em;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item:hover {
+    transform: translateY(-10px); /* Efecto de levantamiento al pasar el cursor */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo de la imagen de la habilidad */
+.skill-item img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 0.5em;
+    transition: transform 0.3s;
+}
+
+.skill-item:hover img {
+    transform: scale(1.1); /* Aumenta levemente el tamaño de la imagen */
+}
+
+/* Texto de la habilidad */
+.skill-item p {
+    font-size: 1em;
+    color: #A7C7E7;
+    font-weight: bold;
+    margin-top: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+/* Projects Section */
+.projects {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.8em;
+    font: weight 500px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.projects p {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Project Item */
+.project-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.project-item img {
+    width: 100%;
+    max-width: 200px;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 30px;
+    text-align: left;
+    flex: 1;
+}
+
+.project-details h3 {
+    font-size: 2em;
+    color: #6a0dad;
+    margin-bottom: 15px;
+}
+
+.project-details p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.case-study-button {
+    text-decoration: none;
+    background-color: #6a0dad;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.case-study-button:hover {
+    background-color: #5c0fa6;
+    transform: translateY(-3px);
+}
