@@ -471,3 +471,88 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ---------------footer-------------- */
+.footer {
+    background: linear-gradient(180deg, #1E3A8A, #E0E7FF);
+    color: #000000;
+    padding: 0.4em 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    margin: 1em;
+    min-width: 220px;
+}
+
+.footer-left h3, .footer-center h3, .footer-right h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #000000;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 0.8em;
+    font-size: 1em;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.contact-info a:hover {
+    color: #9bcdff; /* Efecto de hover en los enlaces */
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 3em;
+    justify-content: left; /* Asegura que los iconos estén centrados */
+}
+
+.social-icons li {
+    margin: 0;
+}
+
+.social-icons li a img {
+    width: 30px;  /* Ajusta el ancho del icono */
+    height: 30px; /* Ajusta la altura del icono */
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+}
+
+.social-icons li a img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño cuando se pasa el mouse */
+}
+.footer-right p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 1em;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.9em;
+    color: #000000;
+    padding-top: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
