@@ -10,7 +10,7 @@ console.log(join(__dirname , 'views'))
 app.set('views', join(__dirname,'views'))
 app.use(indexRouter)
 app.set('view engine', 'ejs')
-Conectar()
+    Conectar()
 
 app.use(express.static(join(__dirname,'public')))
 app.listen(3000)
